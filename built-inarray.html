@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  //bài 1
+  // let myColor = ["Red", "Green", "Blue", "Orange", "Yellow", "Black", "White", "Purple"];
+  // document.write(myColor.join ());
+  // document.write(myColor.toString());
+
+  //bài 2
+  // let a = prompt("Hãy nhập dãy số của bạn: ");
+  // let b = a.toString();
+  // let c = [b[0]];
+  //
+  // for (let i = 0; i < b.length; i++) {
+  //     if ((b[i] % 2 === 0) && (b[i+1] % 2 === 0)) {
+  //           c.push('-', b[i+1]);
+  //     } else {
+  //         c.push(b[i+1]);
+  //     }
+  // }
+  // document.write(c.join(''));
+
+  //bài 3
+  let str = prompt("Hãy nhập chuỗi bạn muốn đổi: ");
+  str.toString();
+  const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+  const ketqua = [];
+
+  for(let x=0; x<str.length; x++) {
+      if(UPPER.includes(str[x])) {
+          ketqua.push(str[x].toLowerCase());
+      } else if(LOWER.includes(str[x])) {
+          ketqua.push(str[x].toUpperCase());
+      } else {
+          ketqua.push(str[x]);
+      }
+  }
+  alert(ketqua.join(''));
+</script>
