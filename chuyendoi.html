@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    table {
+      width: 100%;
+    }
+    input, select {
+      border-radius: 0;
+    }
+    p {
+      color: blue;
+    }
+    button {
+      color: white;
+      background-color: blue;
+      border-radius: 3px;
+      border: 0;
+    }
+    td {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <th>Amount</th>
+  <th>From Unit</th>
+  <th>To Unit</th>
+  <th></th>
+
+  <tr>
+    <td><label for="Amountt"></label><input type="text" id="Amountt"></td>
+    <td>
+      <label for="Fromt"></label><select id="Fromt">
+      <option>Feet</option>
+      <option>Meters</option>
+    </select>
+    </td>
+    <td>
+      <label for="Tot"></label><select id="Tot">
+      <option>Meters</option>
+      <option>Feet</option>
+    </select>
+    </td>
+    <td>
+      <button onclick="convertUnit()">Convert</button>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="Result"></p>
+</body>
+</html>
+
+<script>
+  function convertUnit() {
+    let Amount = document.getElementById('Amountt').value;
+    let From = document.getElementById('Fromt').value;
+    let To = document.getElementById('Tot').value;
+    let Result;
+
+    if (From === "Meters" && To === "Feet") {
+      Result = "Kết quả là: " + Amount * 0.305 + " Feet";
+    } else if (From === "Feet" && To === "Meters") {
+      Result = "Kết quả là: " + Amount * 3.279 + " Meters";
+    } else if (From === "Feet" && To === "Feet") {
+      Result = "Kết quả là: " + Amount + " Feet";
+    } else {
+      Result = "Kết quả là: " + Amount + " Meters";
+    }
+    document.getElementById("Result").innerHTML = Result;
+  }
+</script>
